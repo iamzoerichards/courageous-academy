@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Courageous Academy</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: "Cormorant Garamond", Georgia, serif;
+                background: #fff3f8;
+                color: #4b3440;
+                line-height: 1.6;
+            }
+
+            .top-bar {
+                background: #c9869f;
+                color: white;
+                padding: 10px 24px;
+                font-size: 0.95rem;
+                text-align: center;
+                letter-spacing: 0.5px;
+            }
+
+            header {
+                background: #fff9fc;
+                border-bottom: 1px solid #f3cddd;
+            }
+
+            .header-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 30px 24px 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 14px;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+
+            .logo-area h1 {
+                color: #9f5f78;
+                font-family: "Great Vibes", cursive;
+                font-size: 3.4rem;
+                font-weight: 400;
+                margin: 0;
+                letter-spacing: 1px;
+            }
+
+            .logo-area p {
+                margin: 4px 0 0;
+                color: #9f5f78;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                padding: 10px 16px;
+                color: #9f5f78;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: 700;
+                border-bottom: 3px solid transparent;
+            }
+
+            nav a:hover,
+            nav a.current {
+                border-bottom-color: #f4aac8;
+                color: #c05f86;
+            }
+
+            .hero {
+                background:
+                    linear-gradient(
+                        rgba(166, 83, 115, 0.52),
+                        rgba(166, 83, 115, 0.52)
+                    ),
+                    url("https://i.pinimg.com/1200x/f7/ad/75/f7ad75656a73600157e7bdd1fdc92f20.jpg")
+                        center / cover no-repeat;
+                color: white;
+                padding: 120px 24px;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 850px;
+                margin: 0 auto;
+            }
+
+            .hero h2 {
+                font-family: "Great Vibes", cursive;
+                font-size: 4.7rem;
+                font-weight: 400;
+                margin: 0 0 16px;
+                border: none;
+                color: white;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+                margin-bottom: 28px;
+            }
+
+            .button {
+                display: inline-block;
+                background: #f4aac8;
+                color: #9f5f78;
+                text-decoration: none;
+                padding: 13px 24px;
+                border-radius: 4px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .button:hover {
+                background: #ffd0e2;
+            }
+
+            main {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 45px 24px;
+            }
+
+            .start-here h2 {
+                text-align: center;
+                font-family: "Great Vibes", cursive;
+                font-size: 3.2rem;
+                font-weight: 400;
+            }
+
+            .start-here p {
+                font-size: 1.3rem;
+            }
+
+            .start-here-content {
+                display: grid;
+                grid-template-columns: 1fr minmax(220px, 360px);
+                gap: 30px;
+                align-items: center;
+            }
+
+            .start-here-content img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 6px;
+            }
+
+            section {
+                margin-bottom: 42px;
+                background: #fff9fc;
+                padding: 34px;
+                border-radius: 6px;
+                box-shadow: 0 4px 18px rgba(166, 83, 115, 0.10);
+                border-top: 5px solid #f4aac8;
+            }
+
+            h2 {
+                color: #9f5f78;
+                margin-top: 0;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #f3cddd;
+                font-size: 2rem;
+            }
+
+            .intro-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+                gap: 28px;
+                align-items: start;
+            }
+
+            .info-box {
+                background: #fde8f1;
+                border-left: 5px solid #f4aac8;
+                padding: 20px;
+                border-radius: 4px;
+            }
+
+            .dance-program > h2 {
+                text-align: center;
+            }
+
+            .dance-program .card {
+                border-width: 3px;
+            }
+
+            .dance-program-layout {
+                display: grid;
+                grid-template-columns: 1fr 460px;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .dance-program-layout .cards {
+                grid-template-columns: 1fr;
+                margin-top: 0;
+            }
+
+            .dance-program-image {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 6px;
+            }
+
+            .division-panel {
+                margin-bottom: 24px;
+                background: transparent;
+            }
+
+            .division-panel summary {
+                padding: 18px 24px;
+                background: #c9869f;
+                color: white;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 1.6rem;
+                font-weight: 700;
+                list-style: none;
+                box-shadow: 0 4px 12px rgba(166, 83, 115, 0.15);
+            }
+
+            .division-panel summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .division-panel summary::after {
+                content: "+";
+                float: right;
+                font-size: 1.8rem;
+            }
+
+            .division-panel[open] summary::after {
+                content: "−";
+            }
+
+            .division-panel .division-chart {
+                padding: 24px;
+                background: #fff9fc;
+                border: 1px solid #f3cddd;
+                border-top: none;
+                border-radius: 0 0 6px 6px;
+                animation: slideDown 0.25s ease-out;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .division-chart {
+                overflow-x: auto;
+            }
+
+            .division-chart table {
+                width: 100%;
+                min-width: 620px;
+                border-collapse: collapse;
+                background: #fffafd;
+            }
+
+            .division-chart th,
+            .division-chart td {
+                padding: 14px 16px;
+                text-align: left;
+                border: 1px solid #f3cddd;
+            }
+
+            .division-chart th {
+                background: #c9869f;
+                color: white;
+            }
+
+            .division-chart td:first-child {
+                color: #9f5f78;
+                font-weight: 700;
+            }
+
+            .division-chart tr:nth-child(even) td {
+                background: #fde8f1;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+                gap: 20px;
+                margin-top: 22px;
+            }
+
+            .card {
+                background: #fffafd;
+                padding: 24px;
+                border: 1px solid #f3cddd;
+                border-radius: 6px;
+                min-height: 145px;
+            }
+
+            .card h3 {
+                color: #c05f86;
+                margin-top: 0;
+                font-size: 1.25rem;
+            }
+
+            .highlight {
+                background: #c9869f;
+                color: white;
+                border-top-color: #ffd6e7;
+            }
+
+            .highlight h2 {
+                color: white;
+                border-bottom-color: rgba(255, 255, 255, 0.25);
+            }
+
+            .home-dress-code-link {
+                display: block;
+                width: fit-content;
+                margin: 28px auto 42px;
+                padding: 12px 28px;
+                border: 2px solid #f4aac8;
+                border-radius: 6px;
+                background: #fff9fc;
+                color: #c05f86;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .home-dress-code-link:hover {
+                background: #fde8f1;
+            }
+
+            .owner-feature {
+                display: grid;
+                grid-template-columns: minmax(220px, 320px) 1fr;
+                gap: 34px;
+                align-items: center;
+            }
+
+            .owner-feature img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 4px 18px rgba(166, 83, 115, 0.16);
+            }
+
+            .owner-feature h2 {
+                margin-top: 0;
+            }
+
+            .owner-feature p {
+                margin: 0 0 16px;
+            }
+
+            .contact-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            footer {
+                text-align: center;
+                padding: 28px;
+                background: #c9869f;
+                color: white;
+            }
+
+            @media (max-width: 700px) {
+                .header-inner,
+                .intro-grid {
+                    display: block;
+                    text-align: center;
+                }
+
+                nav {
+                    margin-top: 18px;
+                }
+
+                .hero h2 {
+                    font-size: 2.2rem;
+                }
+
+                section {
+                    padding: 24px;
+                }
+
+                .start-here-content {
+                    display: block;
+                    text-align: center;
+                }
+
+                .dance-program-layout {
+                    display: block;
+                }
+
+                .dance-program-image {
+                    width: min(100%, 460px);
+                    margin: 24px auto 0;
+                }
+
+                .start-here-content img {
+                    margin: 20px auto 0;
+                }
+
+                .owner-feature {
+                    display: block;
+                    text-align: center;
+                }
+
+                .owner-feature img {
+                    width: min(100%, 320px);
+                    margin: 0 auto 24px;
+                }
+
+                .owner-feature h2 {
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-bar">
+            Academy of Dance • Ballet Training for Young Dancers
+        </div>
+
+        <header id="home">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <h1>Courageous Ballet Academy</h1>
+                    <p>Grace, confidence, and joy through ballet.</p>
+                </div>
+
+                <nav>
+                    <a class="current" href="zoes-dance-studio.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="calendar.html">Calendar And Events</a>
+                    <a href="enroll.html">Enroll And Pay Online</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Elegant Ballet Training</h2>
+                <p>
+                    A welcoming dance program where students build technique,
+                    discipline, creativity, and stage confidence.
+                </p>
+                <a class="button" href="contact.html">Request Information</a>
+            </div>
+        </div>
+
+        <main>
+            <section class="start-here">
+                <h2>Confidence Starts Here</h2>
+                <div class="start-here-content">
+                    <p>
+                        New to our academy? Welcome! Choose the class that’s right
+                        for you by selecting your age group and the style or level
+                        of ballet you’d like to explore, and begin your dance
+                        journey with us!
+                    </p>
+                    <img
+                        src="https://i.pinimg.com/1200x/b1/a8/af/b1a8afa044945b97df53cc2c4b998f49.jpg"
+                        alt="Ballet dancer in a studio"
+                    />
+                </div>
+            </section>
+
+            <section class="dance-program">
+                <h2>Dance Program</h2>
+                <div class="dance-program-layout">
+                    <div class="cards">
+                    <div class="card">
+                        <h3>Ballet</h3>
+                        <p>
+                            Our studio specializes in ballet, focusing on
+                            technique, grace, posture, strength, and performance
+                            readiness.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Class Experience</h3>
+                        <p>
+                            Classes are positive, age-appropriate, and designed
+                            to help every dancer be successful, while learning,
+                            and haveing fun.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Performance</h3>
+                        <p>
+                            Students have opportunities to prepare for recitals
+                            and celebrate their progress on stage.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Experienced Ballet Instructors</h3>
+                        <p>
+                            Our instructors are professionally trained in ballet
+                            and bring their knowledge, dedication, and passion
+                            to every class.
+                        </p>
+                    </div>
+                    </div>
+                    <img
+                        class="dance-program-image"
+                        src="https://media.istockphoto.com/id/539329164/photo/group-of-young-girls-with-teacher-in-ballet-dancing-class.jpg?s=612x612&w=0&k=20&c=_L5Tu7XHcWSMJ7qCRBF68DHDVPlUyGPyeyMWw84cVlw="
+                        alt="Young dancers with their ballet teacher"
+                    />
+                </div>
+            </section>
+
+            <details class="division-panel">
+                <summary>Recreational Division</summary>
+                <div class="division-chart">
+                    <table>
+                        <thead>
+                            <tr><th>Level</th><th>Class</th><th>Age Range</th><th>Class Focus</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Pre-K</td><td>Pre-K Ballerinas</td><td>Ages 3–5</td><td>Creative movement and ballet basics</td></tr>
+                            <tr><td>Level 1</td><td>Junior Ballet</td><td>Ages 6–8</td><td>Foundational positions and musicality</td></tr>
+                            <tr><td>Level 2</td><td>Pre-Teen Ballet</td><td>Ages 9–12</td><td>Technique, strength, and performance skills</td></tr>
+                            <tr><td>Level 3</td><td>Teen Ballet</td><td>Ages 13–18</td><td>Progressive technique and artistry</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="division-panel">
+                <summary>Pre-Professional Division</summary>
+                <div class="division-chart">
+                    <table>
+                        <thead>
+                            <tr><th>Track</th><th>Class</th><th>Recommended Ages</th><th>Training Focus</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Foundations</td><td>Pre-Professional Ballet</td><td>Ages 12–14</td><td>Alignment, flexibility, and musicality</td></tr>
+                            <tr><td>Intermediate</td><td>Pre-Professional Ballet</td><td>Ages 14–16</td><td>Advanced vocabulary and pointe preparation</td></tr>
+                            <tr><td>Advanced</td><td>Pre-Professional Ballet</td><td>Ages 16–18</td><td>Refined technique and performance quality</td></tr>
+                            <tr><td>Performance</td><td>Rehearsal &amp; Performance</td><td>By invitation</td><td>Repertoire and showcase preparation</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <a class="home-dress-code-link" href="dress-code.html">View Our Dress Code →</a>
+
+            <section class="owner-feature">
+                <img
+                    src="https://lh3.googleusercontent.com/a/ACg8ocL5OR6eIuU9ZG_aWDmSSpCRWmMonve3tuZI-iJUG-qme-Sh_O0=s461-c-no"
+                    alt="Ballet dancers practicing together"
+                />
+                <div class="owner-copy">
+                    <h2>Meet the Owner</h2>
+                    <p>
+                        Meet Zoe Richards, the proud owner of our ballet academy!
+                        Zoe began her ballet training at a young age and continued
+                        developing her passion and skills at TJC Dance Academy,
+                        where she received extensive training and had the
+                        opportunity to perform professionally. With a deep love
+                        for dance and a passion for helping young dancers grow,
+                        Zoe created the academy to inspire confidence, creativity,
+                        and a lifelong love of ballet in every student.
+                    </p>
+                </div>
+            </section>
+
+            <section class="highlight">
+                <h2>Recitals</h2>
+                <p>
+                    Courageous Academy holds ballet recitals every year on
+                    <strong>December 15th</strong> and
+                    <strong>May 23rd</strong>.
+                </p>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Courageous Academy. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
